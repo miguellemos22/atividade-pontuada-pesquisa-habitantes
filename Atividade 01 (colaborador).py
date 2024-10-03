@@ -33,11 +33,11 @@ while True:
                 sexo = str(input("Digite o seu sexo(M/F): ")).upper()
                 lista_pesquisa.append(Dados(salario=salario, idade=idade, sexo=sexo))
                 
-                continuar = input("Deseja adicionar outra familia? (sim/não): ")
+                continuar = input("Deseja adicionar outra pesquisa? (sim/não): ")
                 while continuar.lower() != 'sim':
                     break
         case 2:
-            nome_do_arquivo = "Pesquisa_prefeitura.txt"
+            nome_do_arquivo = "Pesquisa.txt"
             with open(nome_do_arquivo, "w") as arquivo_alunos:
                 for dado in lista_pesquisa:
                     arquivo_alunos.write(f"{dado.salario}, {dado.idade}, {dado.sexo}\n")
@@ -53,8 +53,8 @@ while True:
             total_mulheres = sum(1 for dado in lista_pesquisa if dado.sexo == "F" and dado.salario == 5000)
 
             print(" === RESULTADOS === ")
-            print(f"Total de famílias que responderam: {contador}")
-            print(f"Salário maior: {maior}, salário menor: {menor}")
+            print(f"Total da pesquisa: {contador}")
+            print(f"idade maior: {maior}, idade menor: {menor}")
             print(f"Soma do salário: {soma}")
             print(f"Média do salário: {media}")
             print(f"Quantidade de mulheres com salário de R$5.000: {total_mulheres}")
